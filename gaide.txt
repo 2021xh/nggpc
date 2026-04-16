@@ -1,0 +1,43 @@
+winget install -e --id Python.Python.3.10 скачиваем питончик 3.10
+
+py -3.10 -m venv.venv310 высираем виртуалку
+
+.\.venv310\Scripts\Activate активируем виртуалку
+
+python --version чекаем версию питончика (надо 3.10.че то там)
+
+pip install pyqt6-tools, sqlite3 (сикуэль скорее всего по дефолту стоит)
+
+pip list (чекаем наличие пайкути)
+
+pyqt6-tools designer запуск конструктора
+
+
+
+ГЕЙМПЛЕЙ ВС КОДА
+Создаем .py файл пустой
+рядом должен лежать готовый конструктор .ui
+
+В терминале пишем pyuic6 untitled.ui (название конструктора) -o untitled.py (название .py файла, который высрется)
+pyuic6 untitled.ui -o untitled.py
+
+
+в чистом .py хуярим:
+import sys 
+from PyQt6.QtWidgets import QApplication, QMainWindow
+from intitled import UiMainWindow        intitled - это название .py, который высран из .ui UiMainWindow - это класс в том же .py 
+
+class MainWindow(QMainWindow, Ui_MainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())
+
+
+В терминале pip install pyinstaller
+pyinstaller --noconsole --onefile your_script.py
