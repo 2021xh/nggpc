@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'Basket_Green.ui'
+# Form implementation generated from reading ui file 'Basket_Pink.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -69,7 +69,8 @@ class Ui_MainWindow(object):
         self.frameCircle3.setObjectName("frameCircle3")
         self.HeadWidget = QtWidgets.QWidget(parent=self.MainWidget)
         self.HeadWidget.setGeometry(QtCore.QRect(-11, 30, 451, 61))
-        self.HeadWidget.setStyleSheet("background-color: rgb(25, 73, 63);")
+        self.HeadWidget.setStyleSheet("background-color: rgb(252, 129, 129);\n"
+"")
         self.HeadWidget.setObjectName("HeadWidget")
         self.labelName = QtWidgets.QLabel(parent=self.HeadWidget)
         self.labelName.setGeometry(QtCore.QRect(20, 10, 131, 41))
@@ -88,7 +89,7 @@ class Ui_MainWindow(object):
         self.frameCircle1_2.setSizePolicy(sizePolicy)
         self.frameCircle1_2.setMinimumSize(QtCore.QSize(0, 0))
         self.frameCircle1_2.setMaximumSize(QtCore.QSize(100, 100))
-        self.frameCircle1_2.setStyleSheet("background-color: rgb(252, 129, 129);\n"
+        self.frameCircle1_2.setStyleSheet("background-color: rgb(25, 73, 63);\n"
 "border-radius: 10px;\n"
 "")
         self.frameCircle1_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
@@ -130,7 +131,7 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.ButtonClearBusket.setFont(font)
-        self.ButtonClearBusket.setStyleSheet("background-color: rgb(25, 73, 63);\n"
+        self.ButtonClearBusket.setStyleSheet("background-color: rgb(252, 129, 129);\n"
 "color: rgb(255, 255, 255);\n"
 "border-radius: 8px;\n"
 "")
@@ -146,7 +147,7 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.ButtonBuy.setFont(font)
-        self.ButtonBuy.setStyleSheet("background-color: rgb(25, 73, 63);\n"
+        self.ButtonBuy.setStyleSheet("background-color: rgb(252, 129, 129);\n"
 "color: rgb(255, 255, 255);\n"
 "border-radius: 8px;\n"
 "")
@@ -199,7 +200,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.LabelName.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#787878;\">Flovery</span></p></body></html>"))
-        self.labelName.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt; font-weight:600; color:#ffffff;\">Fl</span><span style=\" font-size:24pt; font-weight:600; color:#fc8181;\">o.</span><span style=\" font-size:24pt; font-weight:600; color:#ffffff;\">very</span></p></body></html>"))
+        self.labelName.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:24pt; color:#ffffff;\">Fl</span><span style=\" font-size:24pt; color:#19493f;\">o.</span><span style=\" font-size:24pt; color:#ffffff;\">very</span></p></body></html>"))
         self.labelBasket.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">Корзина</span></p></body></html>"))
         self.labelSum.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\">Общая сумма заказа:</p></body></html>"))
         self.labelNumberPrice.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\">Цифры</p></body></html>"))
