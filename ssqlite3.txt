@@ -1,0 +1,42 @@
+-- Таблица цветов
+CREATE TABLE flowers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    status TEXT NOT NULL CHECK(status IN ('В наличии', 'Закончилось')),
+    price INTEGER NOT NULL,
+    discount INTEGER NOT NULL
+);
+
+-- Таблица корзин
+-- Важно: создаем её раньше таблицы users, так как в SQLite alter table 
+-- имеет ограничения по добавлению внешних ключей после создания таблицы.
+CREATE TABLE basket (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_flowers INTEGER NOT NULL,
+    status TEXT NOT NULL CHECK(status IN ('Оформлено', 'Не оформлено')),
+    id_user INTEGER NOT NULL,
+    FOREIGN KEY (id_flowers) REFERENCES flowers(id)
+);
+
+-- Таблица пользователей
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    last_name TEXT NOT NULL,
+    first_name TEXT NOT NULL,
+    email TEXT,
+    basket_id INTEGER NOT NULL,
+    FOREIGN KEY (basket_id) REFERENCES basket(id)
+);
+
+-- В SQLite нельзя добавить FOREIGN KEY через ALTER TABLE так же легко, как в Postgres.
+-- Поэтому мы определили ключи сразу внутри CREATE TABLE.
+-- Теперь добавим недостающую связь для корзины (id_user -> users.id).
+-- Но в SQLite лучше сразу проектировать схему без цикличных ссылок, 
+-- либо использовать TRIGGER для сложной логики.
+
+-- Заполнение данных
+INSERT INTO flowers (name, status, price, discount) VALUES 
+('Тюльпан', 'В наличии', 500, 0),
+('Гвоздика', 'В наличии', 300, 0),
+('Роза', 'В наличии', 600, 100),
+('Ацетрон', 'В наличии', 1000, 0);
